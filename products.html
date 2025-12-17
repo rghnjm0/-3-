@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукция - CRM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><i class="fas fa-home"></i> CRM - ООО «Новый дом»</h1>
+                <p>Каталог продукции</p>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                <a href="customers.html"><i class="fas fa-users"></i> Клиенты</a>
+                <a href="orders.html"><i class="fas fa-shopping-cart"></i> Заказы</a>
+                <a href="products.html" class="active"><i class="fas fa-paint-roller"></i> Продукция</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="page-header">
+                <h2><i class="fas fa-paint-roller"></i> Каталог продукции</h2>
+                <button class="btn btn-primary" onclick="showAddForm()">
+                    <i class="fas fa-plus"></i> Добавить продукт
+                </button>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Бренд:</label>
+                    <select onchange="filterProducts()">
+                        <option>Все</option>
+                        <option>Palizh</option>
+                        <option>GOL</option>
+                        <option>KolerPark</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Категория:</label>
+                    <select onchange="filterProducts()">
+                        <option>Все</option>
+                        <option>Краски</option>
+                        <option>Эмали и лаки</option>
+                        <option>Грунтовки</option>
+                        <option>Колеровочные пасты</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-header palizh">
+                        <h3>Краска интерьерная</h3>
+                        <span class="brand">Palizh</span>
+                    </div>
+                    <div class="product-body">
+                        <p><i class="fas fa-weight"></i> Объем: 10 л</p>
+                        <p><i class="fas fa-ruble-sign"></i> Цена: 4 500 руб.</p>
+                        <p><i class="fas fa-boxes"></i> На складе: 124 ед.</p>
+                        <p class="description">Водно-дисперсионная краска для внутренних работ</p>
+                    </div>
+                    <div class="product-footer">
+                        <button class="btn btn-small" onclick="editProduct(1)">
+                            <i class="fas fa-edit"></i> Редактировать
+                        </button>
+                        <button class="btn btn-small btn-danger" onclick="deleteProduct(1)">
+                            <i class="fas fa-trash"></i> Удалить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header gol">
+                        <h3>Эмаль для металла</h3>
+                        <span class="brand">GOL</span>
+                    </div>
+                    <div class="product-body">
+                        <p><i class="fas fa-weight"></i> Объем: 3 кг</p>
+                        <p><i class="fas fa-ruble-sign"></i> Цена: 3 200 руб.</p>
+                        <p><i class="fas fa-boxes"></i> На складе: 78 ед.</p>
+                        <p class="description">Антикоррозийная эмаль для металлических поверхностей</p>
+                    </div>
+                    <div class="product-footer">
+                        <button class="btn btn-small" onclick="editProduct(2)">
+                            <i class="fas fa-edit"></i> Редактировать
+                        </button>
+                        <button class="btn btn-small btn-danger" onclick="deleteProduct(2)">
+                            <i class="fas fa-trash"></i> Удалить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header kolerpark">
+                        <h3>Лак для паркета</h3>
+                        <span class="brand">KolerPark</span>
+                    </div>
+                    <div class="product-body">
+                        <p><i class="fas fa-weight"></i> Объем: 5 л</p>
+                        <p><i class="fas fa-ruble-sign"></i> Цена: 5 800 руб.</p>
+                        <p><i class="fas fa-boxes"></i> На складе: 45 ед.</p>
+                        <p class="description">Износостойкий лак для паркетных полов</p>
+                    </div>
+                    <div class="product-footer">
+                        <button class="btn btn-small" onclick="editProduct(3)">
+                            <i class="fas fa-edit"></i> Редактировать
+                        </button>
+                        <button class="btn btn-small btn-danger" onclick="deleteProduct(3)">
+                            <i class="fas fa-trash"></i> Удалить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header palizh">
+                        <h3>Грунтовка универсальная</h3>
+                        <span class="brand">Palizh</span>
+                    </div>
+                    <div class="product-body">
+                        <p><i class="fas fa-weight"></i> Объем: 15 л</p>
+                        <p><i class="fas fa-ruble-sign"></i> Цена: 3 700 руб.</p>
+                        <p><i class="fas fa-boxes"></i> На складе: 92 ед.</p>
+                        <p class="description">Акриловая грунтовка для подготовки поверхностей</p>
+                    </div>
+                    <div class="product-footer">
+                        <button class="btn btn-small" onclick="editProduct(4)">
+                            <i class="fas fa-edit"></i> Редактировать
+                        </button>
+                        <button class="btn btn-small btn-danger" onclick="deleteProduct(4)">
+                            <i class="fas fa-trash"></i> Удалить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p><i class="far fa-copyright"></i> 2025 CRM ООО «Новый дом»</p>
+        </footer>
+    </div>
+
+    <script>
+        function showAddForm() {
+            alert("Форма добавления продукта:\n\nВведите данные нового продукта");
+        }
+
+        function editProduct(id) {
+            alert("Редактирование продукта #" + id);
+        }
+
+        function deleteProduct(id) {
+            if (confirm("Удалить продукт #" + id + "?")) {
+                alert("Продукт #" + id + " удален");
+            }
+        }
+
+        function filterProducts() {
+            // Простая фильтрация
+            alert("Фильтрация продукции");
+        }
+    </script>
+</body>
+</html>
